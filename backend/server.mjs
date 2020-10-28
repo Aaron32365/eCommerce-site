@@ -1,11 +1,11 @@
 import express from "express"
 import dotenv from "dotenv"
-import config from "./config"
+import config from "./config.mjs"
 import mongoose from 'mongoose'
-import userRoute from "./routes/userRoute"
+import userRoute from "./routes/userRoute.mjs"
 import bodyParser from 'body-parser'
-import productRoute from "./routes/productRoute"
-const path = require('path')
+import productRoute from "./routes/productRoute.mjs"
+import path from 'path'
 
 dotenv.config()
 const mongodbUrl = config.MONGODB_URL
