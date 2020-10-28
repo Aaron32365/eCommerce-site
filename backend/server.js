@@ -1,10 +1,10 @@
 import express from "express"
 import dotenv from "dotenv"
-import config from "./config.mjs"
+import config from "./config.js"
 import mongoose from 'mongoose'
-import userRoute from "./routes/userRoute.mjs"
+import userRoute from "./routes/userRoute.js"
 import bodyParser from 'body-parser'
-import productRoute from "./routes/productRoute.mjs"
+import productRoute from "./routes/productRoute.js"
 import path from 'path'
 
 dotenv.config()

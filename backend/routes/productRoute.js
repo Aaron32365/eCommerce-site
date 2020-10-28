@@ -1,6 +1,6 @@
 import express from 'express'
-import Product from "../models/productModel.mjs"
-import {isAdmin, isAuth} from "../util.mjs"
+import Product from "../models/productModel.js"
+import {isAdmin, isAuth} from "../util.js"
 
 const router = express.Router()
 
