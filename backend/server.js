@@ -24,12 +24,14 @@ app.use("/api/products", productRoute)
 
 const PORT = process.env.PORT || 3001
 
+// const moduleURL = new URL(import.meta.url);
+
 app.listen(PORT, ()=>{
     console.log("Server running at http://localhost:" + PORT)
 })
 
 app.get('/', function(_, res) {
-    res.sendFile(path.join(__dirname, '../frontend/build/index.html'), function(err) {
+    res.sendFile(path.join(__dirname, '../frontend/src/index.html'), function(err) {
       if (err) {
         res.status(500).send(err)
       }
