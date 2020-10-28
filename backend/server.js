@@ -34,7 +34,7 @@ app.listen(PORT, ()=>{
 
 
 app.get('/', function(_, res) {
-    res.sendFile(path.join(__dirname, './index.html'), function(err) {
+    res.sendFile(path.join(__dirname, '../frontend/public/index.html'), function(err) {
       if (err) {
         res.status(500).send(err)
       }
