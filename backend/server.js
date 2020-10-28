@@ -24,7 +24,8 @@ app.use("/api/products", productRoute)
 
 const PORT = process.env.PORT || 3001
 
-// const moduleURL = new URL(import.meta.url);
+const moduleURL = new URL(import.meta.url);
+const __dirname = path.dirname(moduleURL.pathname);
 
 app.listen(PORT, ()=>{
     console.log("Server running at http://localhost:" + PORT)
