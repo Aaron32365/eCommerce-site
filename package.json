@@ -3,7 +3,7 @@
   "name": "template",
   "version": "1.0.0",
   "description": "",
-  "main": "./frontend/src/index.js",
+  "main": "./backend/server.js",
   "scripts": {
     "start": "concurrently \"nodemon --watch backend --exec node --experimental-modules ./backend/server.js\"  \"cd ./frontend  && npm run start\" ",
     "install": "cd ./frontend && npm install",
