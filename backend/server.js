@@ -18,14 +18,15 @@ mongoose.connect(mongodbUrl, {
 
 
 const app = express()
+app.use(express.static(path.join(__dirname, '../frontend/public')));
 app.use(bodyParser.json())
 app.use("/api/users", userRoute)
 app.use("/api/products", productRoute)
 
 const PORT = process.env.PORT || 3001
 
-const moduleURL = new URL(import.meta.url);
-const __dirname = path.dirname(moduleURL.pathname);
+// const moduleURL = new URL(import.meta.url);
+// const __dirname = path.dirname(moduleURL.pathname);
 
 app.listen(PORT, ()=>{
     console.log("Server running at http://localhost:" + PORT)
