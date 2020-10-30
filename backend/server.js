@@ -22,26 +22,25 @@ mongoose.connect(mongodbUrl, {
 
 
 const app = express()
-app.use(express.static(path.join(__dirname, '../frontend/public')));
 app.use(bodyParser.json())
 app.use("/api/users", userRoute)
 app.use("/api/products", productRoute)
+app.use(express.static(path.join(__dirname, '../frontend/','build')));
 
 const PORT = process.env.PORT || 3001
 
 // const moduleURL = new URL(import.meta.url);
 // const __dirname = path.dirname(moduleURL.pathname);
 
-app.listen(PORT, ()=>{
-    console.log("Server running at http://localhost:" + PORT)
-})
 
-
-
-app.get('/', function(_, res) {
-    res.sendFile(path.join(__dirname, '../frontend/public/index.html'), function(err) {
+app.get('*', function(_, res) {
+    res.sendFile(path.join(__dirname, '../frontend','build','index.html'), function(err) {
       if (err) {
         res.status(500).send(err)
       }
     })
   })
+
+app.listen(PORT, ()=>{
+    console.log("Server running at http://localhost:" + PORT)
+})
