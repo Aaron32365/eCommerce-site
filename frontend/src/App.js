@@ -25,6 +25,7 @@ function App() {
     document.querySelector(".sidebar").classList.remove("open")
   }
   
+//   comment for commit
   return (
 <BrowserRouter>
     <div className="grid-container">
