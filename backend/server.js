@@ -14,6 +14,8 @@ const __dirname = dirname(__filename);
 dotenv.config()
 const mongodbUrl = config.MONGODB_URL
 
+// const connection = "mongodb+srv://username:<password>@<cluster>/<database>?retryWrites=true&w=majority";
+
 mongoose.connect(mongodbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -44,3 +46,9 @@ app.get('*', function(_, res) {
 app.listen(PORT, ()=>{
     console.log("Server running at http://localhost:" + PORT)
 })
+
+
+// const mongoose = require('mongoose');
+// mongoose.connect(connection,{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
+//     .then(() => console.log("Database Connected Successfully"))
+//     .catch(err => console.log(err));
